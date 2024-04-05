@@ -1,16 +1,14 @@
-const addNote = document.querySelector('#add-note');//Botão de para adicionar nota
-const closeModal =  document.querySelector('#close-modal'); //fechar janela modal com os detalhes da nota.
-const modal = document.querySelector('#modal'); //Modal para edição das notas
-const modalView = document.querySelector('#modal-view'); //Modal para exibição dos detalhes da nota
-const notes = document.querySelector('#notes');//Lista divs com dados das notas
-const btnSaveNote = document.querySelector("#btn-save-note"); //icone para salvar nota
-const btnCloseNote = document.querySelector("#btn-close-note");//icone para fechar modal de edição de nota.
+const addNote = document.querySelector('#add-note');
+const closeModal =  document.querySelector('#close-modal');
+const modal = document.querySelector('#modal');
+const modalView = document.querySelector('#modal-view');
+const notes = document.querySelector('#notes');
+const btnSaveNote = document.querySelector("#btn-save-note"); 
+const btnCloseNote = document.querySelector("#btn-close-note");
 const btnDelete = document.querySelector("#deletar-nota");
 const btnEdit = document.querySelector('#editar-nota');
 
-// ------------------------------------------------------------------
-// ---------------------------EVENTOS--------------------------------
-// ------------------------------------------------------------------
+/* --------------------------- eventinhos -------------------------------- */
 
 addNote.addEventListener("click", (evt) => {
     evt.preventDefault();
@@ -46,9 +44,7 @@ btnSaveNote.addEventListener("click", (evt) => {
     saveNote(data);
 });
 
-// ------------------------------------------------------------------
-// ---------------------------FUNÇÕES--------------------------------
-// ------------------------------------------------------------------
+/* --------------------------- Funcoes -------------------------------- */
 
 const saveNote = (note) => {
     let notes = loadNotes();
@@ -144,9 +140,8 @@ const listNotes = () => {
 };
 
 let currentNote = null;
-let deleteListenerAdded = false; // Pra checar se o eventlistener foi adicionado ou não
+let deleteListenerAdded = false; 
 
-// Define a função de alert pra deletar a nota
 const deleteNoteConfirm = (evt) => {
     evt.preventDefault();
     if (currentNote && confirm("Are you sure you want to delete this note?")) {
@@ -184,14 +179,12 @@ const showNote = (note) => {
         document.querySelector('#input-content').value = note.content;
     });
 
-    // Se tiver um event listener, ele vai ser deletado e daí depois adicionado de novo
     if (deleteListenerAdded) {
         btnDelete.removeEventListener("click", deleteNoteConfirm);
     }
 
-    // Aqui o eventlistener é adicionado
     btnDelete.addEventListener("click", deleteNoteConfirm);
-    deleteListenerAdded = true; // Depois que adicionou o eventlistener, seta a checagem pra verdadeiro
+    deleteListenerAdded = true; 
 };
 
 loadNotes();
