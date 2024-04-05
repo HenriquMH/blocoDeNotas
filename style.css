@@ -1,0 +1,103 @@
+*{
+    margin:0;
+    padding:0;
+}
+  
+header{
+    border-bottom: 1px solid #1b85dc;
+    height: 10vh;
+    display:flex;
+}
+
+.mensagem {
+    position: absolute;
+    color: rgb(0, 0, 0);
+    left: 10vw;
+    top: 50vh;
+}
+  
+#logo{
+    width: 30vw;
+    height: 10vh;
+    margin: 0.5%;
+}
+  
+#logo img{
+    height: 8vh;
+}
+
+#display{
+    width: 50vw;
+}
+  
+#user{
+    width: 20vw;
+}
+  
+main{
+    margin: 2vh 2vw;
+    min-height: 80vh;
+}
+  
+#notes{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+  
+.card a{
+    text-decoration: none;
+}
+
+.cartaozin {
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.item-cartao {
+    border-radius: 10px;
+    border: 2px solid #1b85dc;
+
+}
+
+#modal-view{
+    border-radius: 10px;
+    border: 2px solid #1b85dc;
+    position: absolute;
+    display: none;
+    width: 90vw;
+    padding:10px;
+}
+#close-modal{
+    float:right;
+}
+#modal{
+    border-radius: 10px;
+    border: 2px solid #1b85dc;
+    position: absolute;
+    padding:2vh 2vw;
+    display: none;
+    width: 90vw;
+}
+#modal input, #modal textarea {
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+}
+#modal input::placeholder {
+    color: rgb(0, 0, 0);
+}
+#controls-note{
+    display:flex;
+    gap:10px;
+}
+#title-note {
+    font-weight: 800;
+}
+.card {
+    cursor: pointer;
+}
+.card-body h1, .card-body p {
+    color: #000000;
+}
